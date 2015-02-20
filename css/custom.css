@@ -22,6 +22,7 @@ section:first-child {
 #basket div.nl-field.nl-dd.nl-field-open ul li {
 	list-style: none;
 	font-size: 1em;
+	margin-left: 0em;
 }
 
 input[type="text"], input[type="tel"] {
@@ -66,15 +67,11 @@ input[type="text"], input[type="tel"] {
 
 #extra {
 	background: rgb(200, 200, 200);
-	font-size: 0.6em;
-	margin: -1.6666666em;
-	margin-bottom: 1.66666666em;
-	padding: 1.666666em 1.666666em 3.22222222em;
 }
 
 #extra div.nl-field.nl-dd.nl-field-open ul li {
 	list-style: none;
-	font-size: 1em;
+	font-size: 1.6666666em;
 }
 
 #extra .nl-field-toggle,
@@ -83,6 +80,10 @@ input[type="text"], input[type="tel"] {
 #extra input::-webkit-input-placeholder {
 	color: #696969;
 	border-color: #696969;
+}
+
+.small {
+	font-size: 0.6em;
 }
 
 .badge {
