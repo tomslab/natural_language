@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+	<title>Natural Language Form</title>
+	<meta name="description" content="Natural Language Form with custom text input and drop-down lists" />
+	<meta name="keywords" content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico"> 
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<script src="js/modernizr.custom.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body class="nl-blurred">
+	<div class="container demo-1">
+		<header>
+			<h2>Natural Language Checkout <span>with custom input elements</span></h2>	
+		</header>
+		<div class="main clearfix">
+			<form id="nl-form" class="nl-form">
+
+				<section>
+					My items will be delivered<br />
+					<select>
+						<option value="1">tomorrow ( +&#163;5.90 )</option>
+						<option value="2" selected>in 4-5 days ( +&#163;4.50 )</option>
+						<option value="3">within 14 days ( free )</option>
+						<option value="4">on ( +&#163;8.00)</option>
+					</select>
+					<br />to my
+					<select>
+						<option value="1" selected>home</option>
+						<option value="2">work</option>
+						<option value="3">neighbour</option>
+					</select>
+					at:<br />
+					<div style="margin-top:10px;">
+						<input type="text" value="" placeholder="address line 1" data-subline="Address line 1, for example: <em>742 Evergreen Terrace</em>"/><br />
+						<input type="text" value="" placeholder="address line 2" data-subline="Address line 2, for example: <em>Green Lane</em>"/><br />
+						<input type="text" value="" placeholder="town" data-subline="Town, for example: <em>Springfield</em>"/><br />
+						<input type="text" value="" placeholder="county" data-subline="County, example: <em>Norfolk</em>"/><br />
+						<input type="text" value="" placeholder="postcode" data-subline="Postcode, example: <em>LE12 3TA</em>"/><br />
+					</div>
+					<div class="nl-overlay"></div>
+				</section>
+
+				<section id="payment">
+					I will pay for my items using my
+					<select class="payment">
+						<option value="1" selected>credit card</option>
+						<option value="2">PayPal account</option>
+						<option value="3">Bitcoin</option>
+					</select>, the card number is
+					<input class="payment" type="text" value="" placeholder="**** **** **** ****" data-subline="1111 2222 3333 4444"/>
+					<div class="nl-overlay"></div>
+				</section>
+
+				<div class="nl-submit-wrap">
+					<button class="nl-submit" type="submit">Find a restaurant</button>
+				</div>
+				<div class="nl-overlay"></div>
+			</form>
+		</div>
+	</div><!-- /container -->
+	<script src="js/nlform.js"></script>
+	<script src="js/custom.js"></script>
+	<script>
+		var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		$(document).ready(function() {
+			$(window).keydown(function(event){
+				if(event.keyCode == 13) {
+					event.preventDefault();
+					return false;
+				}
+			});
+		});
+	</script>
+</body>
+</html>
