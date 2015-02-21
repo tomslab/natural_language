@@ -1,1 +1,1 @@
-jQuery(document).ready(function(){});
+$("select").change(function(){var e=$(this).attr("id"),t=$("#"+e).val();$("#secretSelect").text(t),"emailPrimary"===e||"emailThird"===e?$("#secretSelect").css("font-size","1.2em"):$("#secretSelect").css("font-size","2em");var c=$("#secretSelect").width();$(this).css("width",c)}).change();

@@ -29,10 +29,10 @@
 	NLForm.prototype = {
 		_init : function() {
 			var self = this;
-			Array.prototype.slice.call( this.el.querySelectorAll( 'select' ) ).forEach( function( el, i ) {
+			/*Array.prototype.slice.call( this.el.querySelectorAll( 'select' ) ).forEach( function( el, i ) {
 				self.fldOpen++;
 				self.fields.push( new NLField( self, el, 'dropdown', self.fldOpen ) );
-			} );
+			} );*/
 			/*Array.prototype.slice.call( this.el.querySelectorAll( 'input' ) ).forEach( function( el, i ) {
 				self.fldOpen++;
 				self.fields.push( new NLField( self, el, 'input', self.fldOpen ) );
@@ -76,6 +76,7 @@
 			this.toggle = document.createElement( 'a' );
 			this.toggle.innerHTML = this.elOriginal.options[ this.elOriginal.selectedIndex ].innerHTML;
 			this.toggle.className = 'nl-field-toggle';
+			this.toggle.tabIndex = '0';
 			this.optionsList = document.createElement( 'ul' );
 			var ihtml = '';
 			Array.prototype.slice.call( this.elOriginal.querySelectorAll( 'option' ) ).forEach( function( el, i ) {
@@ -124,13 +125,13 @@
 			this.toggle.addEventListener( 'click', function( ev ) { ev.preventDefault(); ev.stopPropagation(); self._open(); } );
 			this.toggle.addEventListener( 'touchend', function( ev ) { ev.preventDefault(); ev.stopPropagation(); self._open(); } );
 
-			if( this.type === 'dropdown' ) {
+			/*if( this.type === 'dropdown' ) {
 				var opts = Array.prototype.slice.call( this.optionsList.querySelectorAll( 'li' ) );
 				opts.forEach( function( el, i ) {
 					el.addEventListener( 'click', function( ev ) { ev.preventDefault(); self.close( el, opts.indexOf( el ) ); } );
 					el.addEventListener( 'touchend', function( ev ) { ev.preventDefault(); self.close( el, opts.indexOf( el ) ); } );
 				} );
-			}
+			}*/
 			/*else if( this.type === 'input' ) {
 				this.getinput.addEventListener( 'keydown', function( ev ) {
 					if ( ev.keyCode == 13 ) {
@@ -158,7 +159,7 @@
 			this.open = false;
 			this.form.fldOpen = -1;
 			this.fld.className = this.fld.className.replace(/\b nl-field-open\b/,'');
-
+/*
 			if( this.type === 'dropdown' ) {
 				if( opt ) {
 					// remove class nl-dd-checked from previous option
@@ -171,7 +172,7 @@
 					// update original select element´s value
 					this.elOriginal.value = this.elOriginal.children[ this.selectedIdx ].value;
 				}
-			}
+			}*/
 			/*else if( this.type === 'input' ) {
 				this.getinput.blur();
 				this.toggle.innerHTML = this.getinput.value.trim() !== '' ? this.getinput.value : this.getinput.getAttribute( 'placeholder' );

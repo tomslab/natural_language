@@ -28,19 +28,27 @@ function cardNumberValidator( id, value ) {
 
 // 3714 4963 5398 431
 
-function cvvValidator( id, value ) {
-	cvvPass = true;
-	cvvLength = value.length; // Get address line 1 full length
+function cardNameValidator( id, value ) {
+	cardNamePass = true;
+	cardNameLength = value.length; // Get address line 1 full length
 
-	if( cvvLength === 0 ) { // Address line 1 must be present
+	if( cardNameLength === 0 ) { // Address line 1 must be present
 		validationFeedback(id,'fail','The name on the card is required');
 	}
 
-	if( cvvPass === true ) {
+	if( cardNamePass === true ) {
     	specialCharacterCheck(value);
     	if( specialCharacterResult === true ) {
     		validationFeedback(id,'fail','The name on the card cannot contain special characters');
     	}
+	}
+
+	if( cardNamePass === true ) {
+		var numberCheck = /^[A-Za-z\s]+$/;
+		var numberCheckResult = numberCheck.test(value);
+		if( numberCheckResult === false ) {
+			validationFeedback(id,'fail','The name of the card only contains letters and spaces')
+		}
 	}
 
 	if( cardNamePass === true ) { // If nothing has failed then this is triggered to show success

@@ -3,6 +3,11 @@ body {
 	color: rgb(100, 100, 100);
 }
 
+#secretSelect {
+	font-size: 2em;
+	float: left;
+}
+
 section {
 	margin: -1em;
 	//margin-bottom: 1em;
@@ -31,12 +36,16 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
 	border-width: 0.5px;
 }
 
+input:focus, select:focus {
+	background: yellow !important;
+}
+
 .price {
-	color: rgba(255, 255, 255, 0.6);
+	color: rgb(180, 180, 180);
 }
 
 #payment {
-	background: rgb(216, 216, 216);
+	background: rgb(225, 225, 225);
 	padding: 0.5em 1em 2em;
 	margin: 1em -1em 3em;
 }
@@ -88,11 +97,27 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
 }
 
 .has-error {
-	color: #a94442 !important;
-	background:	#f2dede !important;
+	color: #a94442;
+	background:	#f2dede;
 }
 
 .has-success {
-	color: #0DB610 !important;
-	border-color: rgb(100, 100, 100) !important;
+	color: #0DB610;
+	border-color: rgb(100, 100, 100);
+}
+
+.nl-form .nl-submit {
+	width: 100%;
+	font-size: 0.75em;
+	background: #5cb85c;
+	border-color: #4cae4c;
+	padding: 0;
+	border-radius: 5px;
+	letter-spacing: initial;
+	font-weight: 300;
+	text-transform: initial;
+}
+
+.nl-submit:before {
+	content: none;
 }
