@@ -13,6 +13,18 @@ section:first-child {
 	border-top: none;
 }
 
+#basket {
+	background: rgb(128, 83, 194);
+}
+
+#basket .nl-field-toggle,
+#basket input,
+#basket select,
+#basket input::-webkit-input-placeholder {
+	color: rgb(52, 34, 79);
+	border-color: rgb(52, 34, 79);
+}
+
 #basket li {
 	list-style: initial;
 	//font-size: 0.7em;
@@ -25,7 +37,7 @@ section:first-child {
 	margin-left: 0em;
 }
 
-input[type="text"], input[type="tel"] {
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
 	width: 100%;
 }
 
@@ -33,16 +45,13 @@ input[type="text"], input[type="tel"] {
 	color: rgba(255, 255, 255, 0.6);
 }
 
-#basket {
-	background: rgb(128, 83, 194);
+#products {
+	background: rgb(255, 255, 255);
+	color: rgb(100, 100, 100);
 }
 
-#basket .nl-field-toggle,
-#basket input,
-#basket select,
-#basket input::-webkit-input-placeholder {
-	color: rgb(52, 34, 79);
-	border-color: rgb(52, 34, 79);
+#products .price {
+	color: rgb(175, 175, 175);
 }
 
 #delivery {
@@ -61,7 +70,7 @@ input[type="text"], input[type="tel"] {
 	border-color: #436AB1;
 }
 
-#cardNumber {
+#email, #cardNumber {
 	font-size: 0.8em;
 }
 
@@ -89,5 +98,23 @@ input[type="text"], input[type="tel"] {
 .badge {
 	color: rgba(0,0,0,0.25);
 	font-weight: 700;
-	font-size: 0.6em
+	font-size: 0.6em;
+}
+
+.img-responsive {
+	width: 100%;
+}
+
+.img-half {
+	display: block;
+	width: 50%;
+	margin: auto;
+}
+
+#cardName {
+	width: 283px;
+}
+
+#cvv {
+	width: 60px;
 }
