@@ -1,0 +1,1 @@
+function specialCharacterCheck(a){specialCharacters=/([\!\@\€\£\$\%\^\&\*\(\)\-\_\=\+\{\}\[\]\:\;\"\\\|\<\>\/\?\~\#])/g,specialCharacterResult=specialCharacters.test(a)}

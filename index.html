@@ -25,9 +25,9 @@
 			<form id="nl-form" class="nl-form">
 
 				<section id="products">
-				<p>999</p>
+					<h5>Basket</h5>
 					My email address is
-					<input id="email" type="email" value="" placeholder="hello@example.com"><br />
+					<input id="email" type="email" value="" placeholder="hello@example.com" onkeyup="fieldCheck(this.id)" onfocusout="fieldCheckOut(this.id)"><br />
 					and I would like to purchase:
 					<ul>
 						<li>
@@ -100,6 +100,7 @@
 				</section> -->
 
 				<section id="delivery">
+					<h5>Delivery</h5>
 					I would like my items will be delivered<br />
 					<select>
 						<option value="1">tomorrow ( +&#163;5.90 )</option>
@@ -128,7 +129,7 @@
 				</section>
 
 				<section id="payment">
-					<span class="badge"><i class="fa fa-lock"></i> Secure Pay</span><br />
+					<h5>Payment <span class="badge" style="float:right; margin-top: 10px;"><i class="fa fa-lock"></i> Secure Pay</span></h5>
 					I will pay using my
 					<select>
 						<option value="1" selected>credit card</option>
@@ -173,8 +174,9 @@
 				</section>
 
 				<section id="extra">
+					<h5>One last thing...</h5>
 					Make things faster for next time by entering a password!<br />
-					<input type="password" value="" placeholder="" data-subline="password"><br /><br />
+					<input id="createPassword" type="password" value="" placeholder="" data-subline="password"><br /><br />
 					<div class="small">
 						I
 						<select>
@@ -213,5 +215,25 @@
 			});
 		});
 	</script>
+	
+	<!-- Main validation script -->
+	<script src="js/validation/validation.js"></script>
+
+	<!-- Email -->
+	<script src="js/validation/email.js"></script>
+
+	<!-- Address -->
+	<!-- <script src="js/validation/address.js"></script> -->
+
+	<!-- Cards -->
+	<!-- <script src="js/card.js"></script>
+	<script src="js/jquery.creditCardValidator.js"></script> -->
+
+	<!-- Payment -->
+	<!-- <script src="js/validation/payment.js"></script> -->
+
+	<!-- Special characters -->
+	<!-- <script src="js/validation/specialCharacters.js"></script> -->
+
 </body>
 </html>
